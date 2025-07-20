@@ -1,0 +1,39 @@
+{
+  "name": "projeto-copilot-card-validator",
+  "version": "1.0.0",
+  "description": "Aplicação para identificar bandeiras de cartão de crédito desenvolvida com GitHub Copilot",
+  "main": "index.html",
+  "scripts": {
+    "start": "http-server -p 8000 -o",
+    "test": "node -e \"const { runCardValidatorTests } = require('./tests.js'); runCardValidatorTests();\"",
+    "serve": "python -m http.server 8000",
+    "dev": "live-server --port=8000 --open=/index.html"
+  },
+  "keywords": [
+    "credit-card",
+    "card-validation",
+    "luhn-algorithm",
+    "javascript",
+    "github-copilot",
+    "frontend",
+    "regex",
+    "payment-validation"
+  ],
+  "author": "Desenvolvido com GitHub Copilot",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "live-server": "^1.2.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/usuario/projetoCopilot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/usuario/projetoCopilot/issues"
+  },
+  "homepage": "https://github.com/usuario/projetoCopilot#readme",
+  "engines": {
+    "node": ">=12.0.0"
+  }
+}

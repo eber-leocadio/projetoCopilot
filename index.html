@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Identificador de Bandeira de Cartão de Crédito</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🏦 Identificador de Bandeira</h1>
+            <p>Digite o número do seu cartão de crédito para identificar a bandeira</p>
+        </header>
+
+        <div class="card-input-section">
+            <div class="input-group">
+                <input type="text" id="cardNumber" placeholder="Digite o número do cartão" maxlength="19">
+                <div class="card-brand" id="cardBrand">
+                    <span class="brand-text">Digite um número</span>
+                </div>
+            </div>
+            
+            <div class="validation-info" id="validationInfo">
+                <p class="info-text">A validação é baseada nos primeiros dígitos do cartão</p>
+            </div>
+        </div>
+
+        <div class="supported-brands">
+            <h3>Bandeiras Suportadas:</h3>
+            <div class="brands-grid">
+                <div class="brand-item">
+                    <span class="brand-icon">💳</span>
+                    <span>Visa</span>
+                </div>
+                <div class="brand-item">
+                    <span class="brand-icon">💳</span>
+                    <span>MasterCard</span>
+                </div>
+                <div class="brand-item">
+                    <span class="brand-icon">💳</span>
+                    <span>American Express</span>
+                </div>
+                <div class="brand-item">
+                    <span class="brand-icon">💳</span>
+                    <span>Discover</span>
+                </div>
+                <div class="brand-item">
+                    <span class="brand-icon">💳</span>
+                    <span>Diners Club</span>
+                </div>
+                <div class="brand-item">
+                    <span class="brand-icon">💳</span>
+                    <span>JCB</span>
+                </div>
+                <div class="brand-item">
+                    <span class="brand-icon">💳</span>
+                    <span>Elo</span>
+                </div>
+                <div class="brand-item">
+                    <span class="brand-icon">💳</span>
+                    <span>Hipercard</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h3>Números de Teste:</h3>
+            <div class="test-numbers">
+                <button class="test-btn" data-number="4532015112830366">Visa</button>
+                <button class="test-btn" data-number="5555555555554444">MasterCard</button>
+                <button class="test-btn" data-number="378282246310005">Amex</button>
+                <button class="test-btn" data-number="6011111111111117">Discover</button>
+            </div>
+        </div>
+
+        <footer>
+            <p>🤖 Desenvolvido com GitHub Copilot</p>
+            <p class="disclaimer">* Esta aplicação é apenas para fins educacionais. Nunca insira números reais de cartão.</p>
+        </footer>
+    </div>
+
+    <script src="cardValidator.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

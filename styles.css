@@ -1,0 +1,408 @@
+/* Reset e configurações base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+header p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* Seção de input do cartão */
+.card-input-section {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+    backdrop-filter: blur(10px);
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-group.focused {
+    transform: translateY(-2px);
+    transition: transform 0.2s ease;
+}
+
+#cardNumber {
+    width: 100%;
+    padding: 20px;
+    font-size: 1.5rem;
+    border: 2px solid #e1e5e9;
+    border-radius: 12px;
+    background: #f8f9fa;
+    transition: all 0.3s ease;
+    letter-spacing: 2px;
+    font-family: 'Courier New', monospace;
+}
+
+#cardNumber:focus {
+    outline: none;
+    border-color: #667eea;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+#cardNumber::placeholder {
+    color: #adb5bd;
+    letter-spacing: normal;
+    font-family: inherit;
+}
+
+/* Display da bandeira */
+.card-brand {
+    margin-top: 15px;
+    padding: 15px 20px;
+    border-radius: 10px;
+    border: 2px solid #e1e5e9;
+    background: #f8f9fa;
+    transition: all 0.3s ease;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-brand.unknown {
+    border-color: #6c757d;
+    background: #f8f9fa;
+}
+
+.card-brand.visa {
+    border-color: #1A1F71;
+    background: linear-gradient(135deg, #1A1F71 0%, #4169e1 100%);
+    color: white;
+}
+
+.card-brand.mastercard {
+    border-color: #EB001B;
+    background: linear-gradient(135deg, #EB001B 0%, #ff6b35 100%);
+    color: white;
+}
+
+.card-brand.amex {
+    border-color: #006FCF;
+    background: linear-gradient(135deg, #006FCF 0%, #0099ff 100%);
+    color: white;
+}
+
+.card-brand.discover {
+    border-color: #FF6000;
+    background: linear-gradient(135deg, #FF6000 0%, #ff8533 100%);
+    color: white;
+}
+
+.card-brand.dinersclub {
+    border-color: #0079BE;
+    background: linear-gradient(135deg, #0079BE 0%, #33a3dc 100%);
+    color: white;
+}
+
+.card-brand.jcb {
+    border-color: #005BAC;
+    background: linear-gradient(135deg, #005BAC 0%, #337bb7 100%);
+    color: white;
+}
+
+.card-brand.elo {
+    border-color: #FFD700;
+    background: linear-gradient(135deg, #FFD700 0%, #ffed4a 100%);
+    color: #333;
+}
+
+.card-brand.hipercard {
+    border-color: #8B0000;
+    background: linear-gradient(135deg, #8B0000 0%, #dc143c 100%);
+    color: white;
+}
+
+.brand-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.brand-text {
+    color: #6c757d;
+    font-style: italic;
+}
+
+.brand-icon {
+    font-size: 1.5rem;
+}
+
+.valid-indicator {
+    font-size: 1.1rem;
+    margin-left: 10px;
+}
+
+/* Informações de validação */
+.validation-info {
+    margin-top: 15px;
+}
+
+.info-text {
+    color: #6c757d;
+    text-align: center;
+    font-style: italic;
+}
+
+.validation-details {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.brand-detected {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: #495057;
+}
+
+.validation-checks {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.check-item {
+    display: flex;
+    align-items: center;
+    font-size: 0.95rem;
+    padding: 5px 0;
+}
+
+.check-item.valid {
+    color: #28a745;
+}
+
+.check-item.invalid {
+    color: #dc3545;
+}
+
+.warning {
+    color: #ffc107;
+    font-weight: 500;
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* Bandeiras suportadas */
+.supported-brands {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+
+.supported-brands h3 {
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.brands-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+}
+
+.brand-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    border: 1px solid #e1e5e9;
+    transition: all 0.3s ease;
+}
+
+.brand-item:hover {
+    background: #e9ecef;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Seção de teste */
+.test-section {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+
+.test-section h3 {
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.test-numbers {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+}
+
+.test-btn {
+    padding: 12px 20px;
+    border: 2px solid #667eea;
+    background: white;
+    color: #667eea;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.test-btn:hover {
+    background: #667eea;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.test-btn:active {
+    transform: scale(0.95);
+}
+
+/* Footer */
+footer {
+    margin-top: auto;
+    text-align: center;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+footer p {
+    margin-bottom: 10px;
+}
+
+.disclaimer {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    background: rgba(255,255,255,0.1);
+    padding: 10px;
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    .card-input-section,
+    .supported-brands,
+    .test-section {
+        padding: 20px;
+    }
+    
+    #cardNumber {
+        font-size: 1.2rem;
+        padding: 15px;
+    }
+    
+    .brands-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 10px;
+    }
+    
+    .test-numbers {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .validation-checks {
+        font-size: 0.85rem;
+    }
+    
+    .brand-info {
+        font-size: 1rem;
+    }
+    
+    .test-numbers {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container > * {
+    animation: fadeIn 0.6s ease-out;
+}
+
+.container > *:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.container > *:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.container > *:nth-child(4) {
+    animation-delay: 0.3s;
+}
+
+.container > *:nth-child(5) {
+    animation-delay: 0.4s;
+}
